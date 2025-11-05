@@ -1,12 +1,7 @@
-import { Summary } from "./summaryPresenter.jsx";
+import  SummaryPresenter  from "./summaryPresenter";
 
-// const ReactRoot = observer(   //  will be added in week 3
-function ReactRoot(props){
-    return (<div>
-                <div><Summary model={props.model} /></div>
-            </div>
-           );
+export default function ReactRoot({ model }) {
+  return <SummaryPresenter model={model} />;
 }
-// )
 
-export { ReactRoot }
+export { ReactRoot };
