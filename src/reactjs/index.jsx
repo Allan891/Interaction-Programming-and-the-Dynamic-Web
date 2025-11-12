@@ -1,13 +1,12 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import { reactiveModel}  from "/src/mobxReactiveModel.js";
-import{ ReactRoot }from "./ReactRoot.jsx"; 
+import { ReactRoot } from "./ReactRoot.jsx";
+import {createElement, Fragment} from "react";
+window.React= {createElement:createElement, Fragment:Fragment}; // needed in the lab because it works with both React and Vue
 
-window.React= {createElement:React.createElement, Fragment:React.Fragment}; // needed in the lab because it works with both React and Vue
+import { createRoot } from "react-dom/client";
+import { reactiveModel } from "../mobxReactiveModel";
+
+const root = <ReactRoot model={reactiveModel} />;
 
 
 // mount the app in the browser page. Test at http://localhost:8080/react.html
-
-    const rootElem = document.getElementById("root");
-    const root = createRoot(rootElem);
-    root.render(<ReactRoot model={reactiveModel} />);
+createRoot(document.getElementById('root')).render(root);

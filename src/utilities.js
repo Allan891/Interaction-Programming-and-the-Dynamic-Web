@@ -1,4 +1,4 @@
-/* uncomment the export below to enable the 1.1.2 test suite! */
+
  export  function compareIngredientsCB(ingredientA, ingredientB){
     if (ingredientA.aisle < ingredientB.aisle){ 
         return -1;
@@ -14,7 +14,7 @@
         return 1;
     }
     
-    return 0;// TODO
+    return 0;
 }
 
 export function sortIngredients(ingredients){
@@ -108,9 +108,9 @@ export function shoppingList(dishes){
         }
     }
 
-    const arrayOfIngredientArrays= dishes.map(keepJustIngredientsCB/*TODO pass the callback that transforms a dish to its ingredients */);
-    const allIngredients= arrayOfIngredientArrays.flat();    
-    allIngredients.forEach(ingredientCB/* TODO: pass the callback that treats an ingredient */);
+    const arrayOfIngredientArrays= dishes.map(keepJustIngredientsCB);
+    const allIngredients= arrayOfIngredientArrays.flat();
+    allIngredients.forEach(ingredientCB);
 
     // Note: the 3 lines above can be written as a function chain:
     // dishes.map(callback1).flat().forEach(callback2);

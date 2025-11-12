@@ -1,7 +1,17 @@
-import  SummaryPresenter  from "./summaryPresenter";
+import { Summary } from "./summaryPresenter.jsx";
+import { Sidebar } from "./sidebarPresenter.jsx";
 
-export default function ReactRoot({ model }) {
-  return <SummaryPresenter model={model} />;
+// const ReactRoot = observer(   //  will be added in week 3
+function ReactRoot(props){
+    return (<div>
+                <div>
+                    <Sidebar model={props.model} />
+                </div>
+                <div>
+                    <Summary model={props.model} />
+                </div>
+            </div>
+            );
 }
 
-export { ReactRoot };
+ export { ReactRoot };
