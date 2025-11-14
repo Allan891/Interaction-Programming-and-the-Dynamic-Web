@@ -1,0 +1,112 @@
+TW1 + TW2 Test Results for alaa2
+============================================================
+
+> test
+> vitest --run tw1 tw2
+
+
+ RUN  v3.2.4 /Users/ermiaghaffari/Desktop/Crisit_job/HT25-web
+
+ ❯ node_modules/@iprog/test/test/tw1.1.4.sortDishes.test.js (6 tests | 5 failed) 9ms
+   × TW1.1.4 sort(CB) recap exercise: sortDishes > compareDishesCB > handles dishes with no known type vs starter 4ms
+     → (0 , compareDishesCB) is not a function
+   × TW1.1.4 sort(CB) recap exercise: sortDishes > compareDishesCB > handles starter vs main course 0ms
+     → (0 , compareDishesCB) is not a function
+   × TW1.1.4 sort(CB) recap exercise: sortDishes > compareDishesCB > handles main course vs dessert 0ms
+     → (0 , compareDishesCB) is not a function
+   × TW1.1.4 sort(CB) recap exercise: sortDishes > compareDishesCB > returns zero for dishes of same type 0ms
+     → (0 , compareDishesCB) is not a function
+   × TW1.1.4 sort(CB) recap exercise: sortDishes > sortDishes > sorts in order: 'no known type', starter, main course, dessert 3ms
+     → Target cannot be null or undefined.
+   ✓ TW1.1.4 sort(CB) recap exercise: sortDishes > sortDishes > returns a new array and does not modify the original 1ms
+ ❯ node_modules/@iprog/test/test/tw1.1.2.sortIngredients.test.js (3 tests | 3 failed) 7ms
+   × TW1.1.2 sort(CB) exercise: sortIngredients > compareIngredientsCB compares by aisle, then by name 3ms
+     → (0 , compareIngredientsCB) is not a function
+   × TW1.1.2 sort(CB) exercise: sortIngredients > should sort by aisle first, then by name 2ms
+     → expected false to be true // Object.is equality
+   × TW1.1.2 sort(CB) exercise: sortIngredients > sorted array should not be the same object as original array, Use e.g. spread syntax [...array] 0ms
+     → expected false to be true // Object.is equality
+ ❯ node_modules/@iprog/test/test/tw1.1.6.shoppingList.test.js (1 test | 1 failed) 4ms
+   × TW1.1.6 reduce(CB, acc) example: shoppingList > should add up ingredient amounts 3ms
+     → (0 , shoppingList) is not a function
+ ❯ node_modules/@iprog/test/test/tw1.1.5-menuPrice.test.js (2 tests | 2 failed) 4ms
+   × TW1.1.5 reduce(CB, acc) exercise: menuPrice > should sum up dish prices 3ms
+     → (0 , menuPrice) is not a function
+   × TW1.1.5 reduce(CB, acc) exercise: menuPrice > for empty menu, should return 0 0ms
+     → (0 , menuPrice) is not a function
+ ↓ node_modules/@iprog/test/test/tw2.2.1.resolvePromise.test.js (4 tests | 4 skipped)
+ ❯ node_modules/@iprog/test/test/tw1.1.3.dishType.test.js (5 tests | 5 failed) 20ms
+   × TW1.1.3 filter(CB) exercises: dishType and removeFromMenu > isKnownTypeCB recognizes only starter, main course, dessert 3ms
+     → (0 , isKnownTypeCB) is not a function
+   × TW1.1.3 filter(CB) exercises: dishType and removeFromMenu > dishType returns a known dish type 2ms
+     → expected undefined to be 'main course' // Object.is equality
+   × TW1.1.3 filter(CB) exercises: dishType and removeFromMenu > dishType returns empty string if starter, main course, dessert not present 0ms
+     → expected undefined to be '' // Object.is equality
+   × TW1.1.3 filter(CB) exercises: dishType and removeFromMenu > dishType returns empty string if dishTypes property not present 0ms
+     → expected undefined to be '' // Object.is equality
+   × TW1.1.3 filter(CB) exercises: dishType and removeFromMenu > can remove dishes 13ms
+     → undefined is not a function
+ ❯ node_modules/@iprog/test/test/tw1.1.1.model.test.js (3 tests | 3 failed) 21ms
+   × TW1.1.1 JavaScript Basics > can set current dish 18ms
+     → expected null to be 1 // Object.is equality
+   × TW1.1.1 JavaScript Basics > number of guests can only be set to a positive integer 1ms
+     → expected 2 to be 1 // Object.is equality
+   × TW1.1.1 JavaScript Basics > can add dishes 1ms
+     → expected +0 to be 1 // Object.is equality
+  
+                         /\
+                        /  \
+                       / A  \
+                      /------\
+                     /great UX\
+                    /----------\ 
+                   /involve user\
+                  /--------------\	
+                 /    Pass Lab    \
+                /------------------\
+               /  weekly oral exam  \
+              /----------------------\
+             /  understand concepts:  \ 
+            / M, V, P, array rendering \
+           /reactive object, side effect\
+          / custom event, navigation,    \
+         /  promise, race condition, etc  \
+        /----------------------------------\
+       /     User Interface works!          \
+      / -------------------------------------\
+     /     understand your own code...        \
+    /------------------------------------------\
+   / unit tests pass. Not Enough to pass lab... \
+  /______________________________________________\
+
+
+ ↓ node_modules/@iprog/test/test/tw2.2.2.model-doSearch.test.js (6 tests | 6 skipped)
+ ↓ node_modules/@iprog/test/test/tw2.4.3.searchResultsView.web.test.js (5 tests | 5 skipped)
+ ↓ node_modules/@iprog/test/test/tw2.4.2.searchFormView.web.test.js (4 tests | 4 skipped)
+ ↓ node_modules/@iprog/test/test/tw2.4.4.detailsView.web.test.js (3 tests | 3 skipped)
+ ↓ node_modules/@iprog/test/test/tw2.3.1-presenterSuspense.test.js (18 tests | 18 skipped)
+ ↓ node_modules/@iprog/test/test/tw2.3.2-search-passProps.test.js (14 tests | 14 skipped)
+ ↓ node_modules/@iprog/test/test/tw2.3.2-details-passProps.test.js (12 tests | 12 skipped)
+ ↓ node_modules/@iprog/test/test/tw2.4.1.suspenseView.web.test.js (3 tests | 3 skipped)
+ ✓ node_modules/@iprog/test/test/tw1.2.10.reactiveModel.test.js (2 tests | 2 skipped) 22ms
+ ✓ node_modules/@iprog/test/test/tw1.3.summary.web.test.js (4 tests | 4 skipped) 69ms
+ ✓ node_modules/@iprog/test/test/tw1.2.15.bootstrap.web.test.js (2 tests | 2 skipped) 45ms
+ ✓ node_modules/@iprog/test/test/tw1.2.30-views.web.test.js (6 tests | 4 skipped) 15ms
+ ↓ node_modules/@iprog/test/test/tw2.2.3.model-setCurrentDish.test.js (5 tests | 5 skipped)
+ ✓ node_modules/@iprog/test/test/tw1.2.20-passProps.test.js (18 tests | 17 skipped) 23ms
+ ↓ node_modules/@iprog/test/test/tw2.1.2.searchDishes.test.js (8 tests | 8 skipped)
+ ↓ node_modules/@iprog/test/test/tw2.1.3_4.menuDishDetails.test.js (4 tests | 4 skipped)
+ ↓ node_modules/@iprog/test/test/tw2.1.1.apiConfig.test.js (3 tests | 3 skipped)
+ ↓ node_modules/@iprog/test/test/tw2.3.1-root.web.test.js (2 tests | 2 skipped)
+ ↓ node_modules/@iprog/test/test/tw2.5.1-details.handleCustomEvents.web.test.js (2 tests | 2 skipped)
+ ↓ node_modules/@iprog/test/test/tw2.5.2-search.handleCustomEvents.web.test.js (4 tests | 4 skipped)
+ ↓ node_modules/@iprog/test/test/tw1.3.sidebar.web.test.js (2 tests | 2 skipped)
+ ↓ node_modules/@iprog/test/test/tw1.2.25.root.web.test.js (2 tests | 2 skipped)
+ ↓ node_modules/@iprog/test/test/tw1.4.web.test.js (9 tests | 9 skipped)
+ ↓ node_modules/@iprog/test/test/tw1.5-10.handleCustomEvents.web.test.js (6 tests | 6 skipped)
+
+ Test Files  6 failed | 5 passed | 20 skipped (31)
+      Tests  19 failed | 4 passed | 145 skipped (168)
+   Start at  09:06:35
+   Duration  3.51s (transform 436ms, setup 0ms, collect 5.89s, tests 238ms, environment 7.77s, prepare 2.39s)
+
