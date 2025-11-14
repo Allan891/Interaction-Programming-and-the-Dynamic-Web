@@ -15,4 +15,4 @@ window.myModel= reactiveModel;
 import {dishesConst} from "/src/dishesConst.js";
 window.dishesConst= dishesConst;
 
-// myModel.addToMenu(dishesConst[2]); //You can test with more/different dishes
+myModel.addToMenu(dishesConst[2]); //You can test with more/different dishes
