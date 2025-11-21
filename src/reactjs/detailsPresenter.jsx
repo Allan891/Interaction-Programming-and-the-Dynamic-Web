@@ -32,7 +32,7 @@ function DetailsRender(props) {
         <DetailsView
             dishData={dishData}
             guests={guests}
-            isDishInMenu={isDishInMenu}  
+            isDishInMenu={isDishInMenu} 
             onAddDish={addExtraDishACB}
         />
     );

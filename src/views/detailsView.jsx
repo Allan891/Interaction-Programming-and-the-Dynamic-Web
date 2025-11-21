@@ -1,53 +1,56 @@
 export function DetailsView(props) {
-    const dishData = props.dishData;
-    const guests = props.guests;
-    const isDishInMenu = props.isDishInMenu;
-    const onCancel = props.onCancel;
 
-    if (!dishData) return null;
+  function handleAddToMenuACB() {
+    props.onAddToMenu();
+  } 
+      
 
-    function handleAdd() {
-        const evt = new CustomEvent("dishAdd", { bubbles: true });
-        window.dispatchEvent(evt);
-    }
-
-    return (
-        <div className="details-view">
-            <header>
-                <button
-                    disabled={isDishInMenu}
-                    onClick={handleAdd}
-                >
-                    {isDishInMenu ? "Already in menu" : "Add to menu!"}
-                </button>
-
-                <button onClick={onCancel}>Cancel</button>
-            </header>
-
-            <h2>{dishData.title}</h2>
-
-            {dishData.image && (
-                <img
-                    src={dishData.image}
-                    alt={dishData.title}
-                    className="dish-image"
-                />
-            )}
-
-            <section className="dish-price">
-                <h3>Price</h3>
-                        <p>
-                            Per person:{" "}
-                            {dishData.pricePerServing &&
-                                dishData.pricePerServing.toFixed(2)}
-                        </p>
-                        <p>
-                            For {guests} guest{guests === 1 ? "" : "s"}:{" "}
-                            {dishData.pricePerServing &&
-                                (dishData.pricePerServing * guests).toFixed(2)}
-                        </p>
-            </section>
-            
+  return (
+    <div className="details-view">
+        <div>
+            <button disabled={props.isDishInMenu} onClick={handleAddToMenuACB}>
+            Add to menu!
+            </button>
+            <button>Cancel</button>
         </div>
+
+        <div>{props.dishData.title}</div>
+
+        <img className="dish-image" src={props.dishData.image} alt={props.dishData.title} />
+
+        <div className="dish-price">
+            <div>Price {props.dishData.pricePerServing}</div>
+            <div>
+            For {props.guests} guest{props.dishData.pricePerServing * props.guests}
+            </div>
+        </div>
+
+        <div>
+          <a
+            href={props.dishData.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Go to recipe
+          </a>
+        </div>
+
+        <div className="dish-instructions">
+          {props.dishData.instructions}
+        </div>
+        <div className="dish-instructions">
+          {props.dishData.extendedIngredients.map(IngredientsCB)}
+        </div>
+    </div>
+    
     );
+    
+    function IngredientsCB(ingrId){
+        return (
+            <div key={ingrId.id} >
+                {ingrId.name}: {ingrId.amount}: {ingrId.unit}
+
+            </div>
+        );
+    }
 }
