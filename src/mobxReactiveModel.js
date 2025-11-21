@@ -1,10 +1,29 @@
 import "/src/teacherFetch.js"; // protection against fetch() in infinite loops
-import { observable, configure } from "mobx";
-import { model } from "/src/DinnerModel.js";
+import { observable, configure, reaction } from "mobx";
+import { model } from "./DinnerModel.js";
 
 configure({ enforceActions: "never", });  // we don't use Mobx actions in the Lab
 
-export const reactiveModel=observable(model);
+export const reactiveModel = observable(model);
+
+// const currentDishEffect = reactiveModel.currentDishEffect;
+function currentDishIdACB() {
+    return reactiveModel.currentDishId;
+}
+
+function currentDishEffectACB() {
+    reactiveModel.currentDishEffect();
+}
+
+reaction(
+    currentDishIdACB,
+    currentDishEffectACB
+);
+
+// reactiveModel.doSearch(reactiveModel.searchParams);
+
+reactiveModel.doSearch({});
+
 
 
 // ------ for Lab debug purposes ----------
@@ -12,7 +31,8 @@ export const reactiveModel=observable(model);
 window.myModel= reactiveModel;
 
 // making some example dishes available 
-import {dishesConst} from "/src/dishesConst.js";
-window.dishesConst= dishesConst;
+import { dishesConst } from "/src/dishesConst.js";
+window.dishesConst = dishesConst;
 
-myModel.addToMenu(dishesConst[2]); //You can test with more/different dishes
+
+export default reactiveModel;
