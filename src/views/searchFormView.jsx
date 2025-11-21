@@ -6,15 +6,15 @@ export function SearchFormView({
     onTypeChange,
     onSearchButton,}) 
     {
-    function textCB(e) {
+    function textACB(e) {
         onTextChange && onTextChange(e.target.value);
     }
 
-    function typeCB(e) {
+    function typeACB(e) {
         onTypeChange && onTypeChange(e.target.value);
     }
 
-    function searchCB(e) {
+    function searchACB(e) {
         onSearchButton && onSearchButton();
     }
     function dishTypeOptionsCB(optionString) {
@@ -30,17 +30,17 @@ export function SearchFormView({
 
                 <input
                     value={text || ""}
-                    onChange={textCB}
+                    onChange={textACB}
                 />
 
                 <select value={type || ""} 
-                        onChange={typeCB}>
+                        onChange={typeACB}>
 
                     <option value="">Choose:</option>
                     {dishTypeOptions.map(dishTypeOptionsCB)}
                 </select>
 
-                <button onClick={searchCB}>
+                <button onClick={searchACB}>
                     Search!
                 </button>
             
