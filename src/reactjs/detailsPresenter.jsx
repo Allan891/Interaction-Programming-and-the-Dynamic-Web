@@ -24,8 +24,10 @@ function DetailsRender(props) {
     const foundDish = model.dishes.find(isDishInMenuCB);
     const isDishInMenu = !!foundDish;
 
+    
     function addExtraDishACB() {
-        model.addToMenu(dishData);
+        const currentDish = model.currentDishPromiseState && model.currentDishPromiseState.data;
+        model.addToMenu(currentDish);
     }
 
     return (
@@ -33,7 +35,7 @@ function DetailsRender(props) {
             dishData={dishData}
             guests={guests}
             isDishInMenu={isDishInMenu} 
-            onAddDish={addExtraDishACB}
+            onAddToMenu={addExtraDishACB}
         />
     );
 }

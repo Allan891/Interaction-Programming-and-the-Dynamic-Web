@@ -9,16 +9,20 @@ export const Search = observer(function SearchRender({ model }) {
     const { promise, data, error } = model.searchResultsPromiseState || {};
     const { query, type } = model.searchParams || {};
 
-    function handleSearchTextChange(text) {
-        model.setSearchText?.(text) ?? model.setSearchQuery?.(text);
+    function searchTextACB(text) {
+        model.setSearchQuery(text);
     }
 
-    function handleSearchTypeChange(type) {
+    function searchTypeACB(type) {
         model.setSearchType(type);
     }
 
-    function handleSearchNow() {
+    function searchNowACB() {
         model.doSearch(model.searchParams);
+    }
+
+    function dishChosenACB(dish) {
+        model.setCurrentDishId(dish.id);
     }
 
     return (
@@ -27,17 +31,14 @@ export const Search = observer(function SearchRender({ model }) {
                 dishTypeOptions={dishTypeOptions}
                 text={query}               
                 type={type}
-                onTextChange={console.log}
-                onTypeChange={console.log}
-                onSearch={() => console.log}
-                // onTextChange={handleSearchTextChange}
-                // onTypeChange={handleSearchTypeChange}
-                // onSearch={handleSearchNow}
+                onTextChange={searchTextACB}
+                onTypeChange={searchTypeACB}
+                onSearchButton={searchNowACB}
                 
             />
 
             {data ? (
-                <SearchResultsView searchResults={data} />
+                <SearchResultsView searchResults={data} onDishClick={dishChosenACB} />
             ) : (
                 <SuspenseView promise={promise} error={error} />
             )}

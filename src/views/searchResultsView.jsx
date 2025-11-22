@@ -1,9 +1,7 @@
 export function SearchResultsView({ searchResults, onDishClick }) {
   function searchResultCB(dish) {
-    function dishClickedACB() {
-      if (onDishClick) {
-        onDishClick(dish);   
-      }
+    function dishClickACB() {
+        onDishClick(dish);
     }
 
     return (
@@ -18,7 +16,7 @@ export function SearchResultsView({ searchResults, onDishClick }) {
           verticalAlign: "top",
           margin: "8px",
         }}
-        onClick={dishClickedACB}
+        onClick={dishClickACB}
       >
         <img src={dish.image} height={100} alt={dish.title} />
         <div>{dish.title}</div>

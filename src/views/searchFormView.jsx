@@ -7,15 +7,15 @@ export function SearchFormView({
     onSearchButton,}) 
     {
     function textACB(e) {
-        onTextChange && onTextChange(e.target.value);
+        onTextChange(e.target.value);
     }
 
     function typeACB(e) {
-        onTypeChange && onTypeChange(e.target.value);
+        onTypeChange(e.target.value);
     }
 
     function searchACB(e) {
-        onSearchButton && onSearchButton();
+        onSearchButton();
     }
     function dishTypeOptionsCB(optionString) {
         return (
