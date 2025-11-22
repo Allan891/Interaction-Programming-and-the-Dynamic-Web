@@ -20,7 +20,7 @@ const pages= {
     "react":{
         entry: '/src/reactjs/index.jsx',
         title:"DinnerPlanner React", 
-        body: '<div id="root"></div>'
+        body: '<meta name="viewport" content="width=device-width,initial-scale=1.0"> <div id="root"></div>'
     },
 }
 // running tests from @iprog/test
