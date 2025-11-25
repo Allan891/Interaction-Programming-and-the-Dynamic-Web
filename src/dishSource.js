@@ -22,7 +22,7 @@ function gotResponseACB(response) {
     return response.json();
 }
 
-
+// Returns only the results array from the full API response
 function someACB(apiResultObject) {
     console.log("Search API returned:", apiResultObject);
     return apiResultObject.results;

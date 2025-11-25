@@ -20,5 +20,3 @@ export function ReactRoot(props){
             </div>
             );
 }
-
- export default ReactRoot;

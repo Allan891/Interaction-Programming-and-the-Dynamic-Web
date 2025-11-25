@@ -62,7 +62,7 @@ export const model = {
     },
 
 
-
+// Reaction, currentDishId is set => fetch it detalis
     currentDishEffect(){
     if (!this.currentDishId){
         this.currentDishPromiseState.promise = null;
