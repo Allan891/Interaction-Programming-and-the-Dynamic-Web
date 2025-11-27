@@ -1,9 +1,65 @@
-/* A debug class, used to separate components graphically during development */
-.alignRight { text-align: right; }
-.debug {
-    border-style:solid;
+html {
+  height: 100%;
 }
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+div {
+  border: 1px solid;
+  text-align: left;
+}
+
+
 .number {
   text-align: right;
   padding-right: 0.5em;
 }
+
+/* NARROW SCREENS  */
+.flexParent {
+  height: 100%;
+}
+
+
+.app-root {
+  display: block;               
+  height: auto;
+}
+
+.sidebar,
+.mainContent,
+.rightSidePart {
+  width: 100%;                 
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+/* WIDE SCREENS*/
+@media (min-width: 500px) {
+  .flexParent {
+    display: flex;              
+    height: 100%;              
+    box-sizing: border-box;
+  }
+
+  .app-root {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+
+  .sidebar{
+    flex: 0;
+    margin: auto;
+    width: 0.8;
+    margin: 0; 
+  } 
+  
+  .mainContent, .summary{
+    margin: auto; 
+    width: fit-content;
+  }
+}  

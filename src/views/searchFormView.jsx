@@ -17,6 +17,11 @@ export function SearchFormView({
     function searchACB(e) {
         onSearchButton();
     }
+
+    function summaryACB() {
+        window.location.hash = "#/summary";
+    }
+
     function dishTypeOptionsCB(optionString) {
         return (
             <option key={optionString} value={optionString}>
@@ -41,7 +46,10 @@ export function SearchFormView({
                 </select>
 
                 <button onClick={searchACB}>
-                    Search!
+                    Search
+                </button>
+                <button onClick={summaryACB}>
+                    Summary
                 </button>
             
             </div>

@@ -1,7 +1,15 @@
 export function DetailsView(props) {
+  function navigateToSearch() {
+    window.location.hash = "#/search";
+  }
 
   function handleAddToMenuACB() {
     props.onAddToMenu();
+    navigateToSearch();
+  }
+
+  function handleCancelACB() {
+    navigateToSearch();
   } 
       
 
@@ -9,9 +17,9 @@ export function DetailsView(props) {
     <div className="details-view">
         <div>
             <button disabled={props.isDishInMenu} onClick={handleAddToMenuACB}>
-            Add to menu!
+              Add to menu
             </button>
-            <button>Cancel</button>
+            <button onClick={handleCancelACB}>Cancel</button>
         </div>
 
         <div>{props.dishData.title}</div>

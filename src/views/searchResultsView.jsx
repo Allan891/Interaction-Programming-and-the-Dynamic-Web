@@ -2,6 +2,7 @@ export function SearchResultsView({ searchResults, onDishClick }) {
   function searchResultCB(dish) {
     function dishClickACB() {
         onDishClick(dish);
+        window.location.hash = "#/details";
     }
 
     return (
@@ -12,7 +13,7 @@ export function SearchResultsView({ searchResults, onDishClick }) {
         style={{
           display: "inline-block",   
           textAlign: "center",
-          width: "150px",
+          width: "100px",
           verticalAlign: "top",
           margin: "8px",
         }}
