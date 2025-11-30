@@ -13,7 +13,6 @@ export function SearchResultsView({ searchResults, onDishClick, query }) {
   }
 
   
-  
   function searchResultCB(dish) {
     function dishClickACB() {
         onDishClick(dish);
