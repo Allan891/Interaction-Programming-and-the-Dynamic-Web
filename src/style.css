@@ -62,4 +62,11 @@ div {
     margin: auto; 
     width: fit-content;
   }
+
+  .no-results {
+    padding: 1rem;
+    font-style: italic;
+    opacity: 0.8;
+  }
+
 }  

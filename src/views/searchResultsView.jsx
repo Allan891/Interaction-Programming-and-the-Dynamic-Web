@@ -1,4 +1,19 @@
-export function SearchResultsView({ searchResults, onDishClick }) {
+export function SearchResultsView({ searchResults, onDishClick, query }) {
+
+  if (!searchResults) {
+    return null;
+  }
+
+  // Search finished but found nothing
+  if (!searchResults || searchResults.length === 0) {
+    if (!query || query.trim() === "") {
+      return null;      
+    }
+    return <div>No dishes found. Please check the spelling!  </div>;
+  }
+
+  
+  
   function searchResultCB(dish) {
     function dishClickACB() {
         onDishClick(dish);

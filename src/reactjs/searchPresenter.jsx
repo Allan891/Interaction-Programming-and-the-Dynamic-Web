@@ -38,7 +38,7 @@ export const Search = observer(function SearchRender({ model }) {
             />
 
             {data ? (
-                <SearchResultsView searchResults={data} onDishClick={dishChosenACB} />
+                <SearchResultsView searchResults={data} onDishClick={dishChosenACB} query={query}/>
             ) : (
                 <SuspenseView promise={promise} error={error} />
             )}
